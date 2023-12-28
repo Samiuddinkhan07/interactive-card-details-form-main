@@ -1,47 +1,195 @@
-*,::before,::after{
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*,
+::before,
+::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     width: 100%;
+    font-size: 18px
 }
 
-.page-container{
+.page-container {
     height: 100%;
     width: 100%;
 }
 
+label {
+    font-weight: 500;
+    color: hsl(278, 68%, 11%);
+    display: block;
+    margin:10px 0px;
+}
 
-.page-container .container-wrapper .card-section{
-    background-image: url('/images/bg-main-mobile.png');
+.page-container .container-wrapper .input-details-section {
+    display: grid;
+    place-items: center;
+
+}
+
+input {
+    padding: 9px;
+    /* width: 75%; */
+    border:2px solid hsl(270, 3%, 87%);
+    border-radius:8px;
+    outline:none;
+}
+input:focus{
+     border:2px solid hsl(278, 68%, 11%);
+}
+
+input#card-holder,input#card-number {
+    width:100%;
+    
+}
+input#month,input#year{
+    width: 45%;
+}
+
+.page-container .container-wrapper .input-details-section button{
+    padding: 4px 10px;
+    margin:15px 0px;
+    cursor: pointer;
+    background-color:hsl(278, 68%, 11%) ;
+    color: hsl(0, 0%, 100%);
+    outline:none;
+    border:2px solid hsl(278, 68%, 11%) ;
+    border-radius: 4px;
 }
 
 
 
-
-
-@media screen and (min-width:700px){
-    .page-container .container-wrapper{
+@media screen and (min-width:768px) {
+    .page-container .container-wrapper {
         display: flex;
         flex-direction: row;
         height: 100%;
     }
 
-    .page-container .container-wrapper .card-section{
-        width: 35%;
-        background-image: url('./images/bg-main-desktop.png');
+    .page-container .container-wrapper .card-section {
+        width: 20%;
+        background: linear-gradient(142deg, rgba(48, 13, 65, 1) 0%, rgba(80, 35, 57, 1) 17%, rgba(73, 31, 56, 1) 22%, rgba(70, 29, 55, 1) 27%, rgba(51, 45, 89, 1) 100%);
+        ;
         height: 100%;
-        background-repeat: no-repeat;
-        border: 2px solid;
+
     }
 
-    .page-container .container-wrapper .input-details-section{
-       
-        width: 65%;
-        background-color: #fff;
-        border:3px solid red;
+    .page-container .container-wrapper .input-details-section {
+
+width: 27%;
+
+margin: 0 auto;
+
+background-color: #fff;
+
+}
+
+    .page-container .container-wrapper .card-section .card-section-wrapper {
+        height: 100%;
     }
+
+   
+
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-front-section {
+        transform: translate(25%, 52%);
+    }
+
+    
+
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-back-section {
+        transform: translate(44%, 69%);
+    }
+
+    .page-container .container-wrapper .input-details-section .input-details-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-container .container-wrapper .input-details-section .input-details-wrapper .month-year-cvv {
+        display: flex;
+        align-items: center;
+        gap:12px;
+    }
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-front-section {
+        transform: translate(36%, 25%);
+        background-image: url('./images/bg-card-front.png');
+        background-repeat: no-repeat;
+        height: 40%;
+    }
+
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-back-section {
+        transform: translate(59%, 32%);
+        background-image: url('./images/bg-card-back.png');
+        background-repeat: no-repeat;
+        height: 40%;
+    }
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-front-section {
+        transform: translate(36%, 25%);
+       
+    }
+
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-back-section {
+        transform: translate(59%, 32%);
+       
+    }
+}
+
+
+
+@media screen and (max-width:1440px) {
+    .page-container .container-wrapper .card-section {
+        width: 45%;
+    }
+
+    
+}
+
+@media screen and (max-width:767px) {
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-front-section {
+        transform: translate(7%, 28%);
+        position: relative;
+        z-index: 2;
+    }
+
+    .page-container .container-wrapper .card-section .card-section-wrapper .card-back-section {
+        transform: translate(45%, -97%);
+        z-index: 1;
+        position: relative;
+    }
+
+    .page-container .container-wrapper .card-section {
+        width: 100%;
+        background: linear-gradient(142deg, rgba(48, 13, 65, 1) 0%, rgba(80, 35, 57, 1) 17%, rgba(73, 31, 56, 1) 22%, rgba(70, 29, 55, 1) 27%, rgba(51, 45, 89, 1) 100%);
+        height: 200px;
+    }
+
+    .page-container .container-wrapper .input-details-section .input-details-wrapper .month-year-cvv {
+        display: flex;
+    }
+
+    .page-container .container-wrapper .input-details-section .input-details-wrapper .month-year-cvv div:first-child input {
+        width: 45%;
+    }
+
+    .page-container .container-wrapper .input-details-section .input-details-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .page-container .container-wrapper .input-details-section{
+        margin:40px 3px
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .page-container .container-wrapper .card-section {
+        width: 100%;
+    }
+
 }
